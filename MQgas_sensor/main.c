@@ -29,11 +29,11 @@ int main ()
 		if(adcresult>1048 )
 		{
 			GPIOF->DATA = 0x08 ;
-			GPIOA->DATA = 0x08;
+			
 		}
 		else{
 			GPIOF->DATA &= ~0x08 ;
-			GPIOA->DATA &= ~0x08 ;
+			
 		}
 	}
 	
@@ -44,13 +44,6 @@ void GPIOF_Init (void)
 	SYSCTL->RCGCGPIO |= 0x20 ;
 	GPIOF->DIR |= 0x08;
 	GPIOF->DEN |= 0x08;
-	
-	
-	
-	SYSCTL->RCGCGPIO |= 0x01 ;
-	GPIOA->DIR |= 0x08;
-	GPIOA->DEN |= 0x08;
-	
 	
 	
 }
